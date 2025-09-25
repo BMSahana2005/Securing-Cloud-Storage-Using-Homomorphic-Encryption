@@ -2,6 +2,7 @@
 Python-based system for secure and efficient cloud file storage. It converts text files to ASCII, encrypts them using the CKKS homomorphic encryption scheme (via the TenSEAL library), compresses the encrypted data with gzip, and then uploads the final, secure file to Dropbox. The method prioritizes both data privacy and storage efficiency.
 
 **Features**
+
 --Homomorphic Encryption: Uses the CKKS (Cheon-Kim-Kim-Song) homomorphic encryption scheme, provided by the TenSEAL library, to encrypt data. This allows for potential future computations on the data without ever needing to decrypt it, ensuring privacy.
 
 --Data Compression: Encrypted files are compressed using Python's gzip module. This reduces the file size, leading to faster uploads and more efficient storage in the cloud.
@@ -11,6 +12,7 @@ Python-based system for secure and efficient cloud file storage. It converts tex
 --ASCII Conversion: The process begins by converting the input text file into its numerical ASCII representation, which prepares the data for the encryption process.
 
 **How It Works**
+
 --The system follows a four-step workflow to process and store a file securely:
 
 --File Conversion: A user-provided text file is read, and its characters are converted into their corresponding ASCII numerical values. This creates an intermediate plaintext file of numbers.
@@ -24,26 +26,29 @@ Python-based system for secure and efficient cloud file storage. It converts tex
 This process demonstrates a trade-off where increasing levels of security (ASCII conversion -> CKKS encryption -> compression/upload) require a corresponding increase in processing time.
 
 **Requirements**
+
 To run this project, you'll need:
 
-Python 3.x
+--Python 3.x
 
-The tenseal library
+--The tenseal library
 
-The gzip module (built-in with Python)
+--The gzip module (built-in with Python)
 
-The dropbox Python library
+--The dropbox Python library
 
-A Dropbox account with a valid API access token
+--A Dropbox account with a valid API access token
 
 **Installation**
-Set up your Dropbox API token:
 
-Create an app on the Dropbox Developers site.
+--Set up your Dropbox API token:
 
-Generate an access token.
+--Create an app on the Dropbox Developers site.
 
-Update the DROPBOX_ACCESS_TOKEN variable in the script with your token.
+--Generate an access token.
+
+--Update the DROPBOX_ACCESS_TOKEN variable in the script with your token.
 
 **Contribution**
+
 Feel free to open issues or submit pull requests to improve the project. Future work could include optimizing upload speed, exploring parallel processing, or integrating with other cloud platforms.
